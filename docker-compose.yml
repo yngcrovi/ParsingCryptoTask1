@@ -13,7 +13,7 @@ services:
     image: postgres:13.3
     container_name: db_postgres
     env_file:
-      - path: ./.env
+      - ./.env
     volumes:
       - .:/docker-entrypoint-initdb.d
     ports:
