@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "crypto"
+version = "0.1.0"
+description = ""
+authors = ["yngcrovi <crovion@gemail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+psycopg2-binary = "^2.9.9"
+pydantic-settings = "^2.5.2"
+requests = "^2.32.3"
+aiohttp = "^3.10.5"
+sqlalchemy = "^2.0.34"
+psycopg-binary = "^3.2.1"
+apscheduler = "^3.10.4"
+fastapi = {extras = ["all"], version = "^0.114.2"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
