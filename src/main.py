@@ -19,11 +19,10 @@ async def request_actual_crypto():
         massage = ''
         massage_binance = await price_binance()  
         massage_kucoin = await price_kucoin()
-        print(massage_binance, massage_kucoin)
         if massage_binance:
-            massage += massage_binance + '\n'
+            massage += massage_binance + ' '
         if massage_kucoin: 
-            massage += massage_kucoin + '\n'
+            massage += massage_kucoin + ' '
         if massage:
             send_message_email(massage)
         await asyncio.sleep(10)

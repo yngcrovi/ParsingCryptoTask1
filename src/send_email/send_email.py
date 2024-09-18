@@ -9,11 +9,11 @@ load_dotenv()
 
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587  
-USERNAME = os.getenv('USERNMAE')
+USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD_EMAIL')
 FROM_EMAIL = os.getenv('FROM_EMAIL')
 TO_EMAIL = os.getenv('TO_EMAIL')
-SUBJECT = 'Цена повысилась!!!'
+SUBJECT = os.getenv('SUBJECT')
 
 def send_message_email(body: str):
     msg = MIMEMultipart()
@@ -21,7 +21,6 @@ def send_message_email(body: str):
     msg['To'] = TO_EMAIL
     msg['Subject'] = SUBJECT
     msg.attach(MIMEText(body, 'plain'))
-
     try:
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()  

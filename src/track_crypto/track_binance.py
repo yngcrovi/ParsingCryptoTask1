@@ -5,4 +5,5 @@ from .track_crypto import price_crypto
 title_crypto = ['BTC/USDT', 'BTC/ETH', 'BTC/XMR', 'BTC/SOL', 'BTC/RUB', 'BTC/DOGE']
 
 async def price_binance():
-    await price_crypto(title_crypto, get_price_binance, binance_service, 'Binance')
+    massage = await price_crypto(title_crypto, get_price_binance, binance_service, 'Binance')
+    return massage

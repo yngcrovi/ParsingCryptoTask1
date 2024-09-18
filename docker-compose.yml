@@ -2,16 +2,16 @@ version: "3.9"
 services:
   wed:
     build: .
-    container_name: fastapi
+    container_name: fastapi_crypto
     external_links: 
-      - db_postgres:db_postgres
+      - db_postgres_crypto:db_postgres_crypto
     volumes:
       - ./src:/src
     ports:
       - "80:80"
   postgres:
     image: postgres:13.3
-    container_name: db_postgres
+    container_name: db_postgres_crypto
     env_file:
       - ./.env
     volumes:
